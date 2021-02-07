@@ -18,10 +18,7 @@ class Coord:
         self.x = x
         self.y = y
         self.status = Status.EMPTY
-
-    def update(self, status):
-        self.status = status
-
+        
 class Player:
     def __init__(self, name):
         self.name = name

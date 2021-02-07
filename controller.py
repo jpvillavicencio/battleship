@@ -22,7 +22,7 @@ class GameController:
     def setCoord(self, x, y, status):
         for coord in self.board.board:
             if coord.x == x and coord.y == y:
-                coord.update(status)
+                coord.status = status
                 return coord
             
     def printBoard(self):
@@ -57,10 +57,10 @@ class GameController:
 
         if ship.orientation == Orientation.VERTICAL:
             for l in range(ship.length):
-                self.setCoord(ship.x+l, ship.y, Status.SHIP)
+                self.setCoord(ship.x, ship.y+1, Status.SHIP)
         else:
             for l in range(ship.length):
-                self.setCoord(ship.x, ship.y+l, Status.SHIP)
+                self.setCoord(ship.x+l, ship.y, Status.SHIP)
 
     def attack(self, x, y):
         coord = self.getCoord(x, y)

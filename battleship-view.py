@@ -11,7 +11,7 @@ def initialisePlayer():
     return player1, player2
     
 def initialiseBoard():
-    print("How big is your board (n x n)?", end="")
+    print("How big is your board? Input 1 value for n? ", end="")
     size = int(input())
     return size
 
@@ -53,11 +53,11 @@ def playerAttack():
 
 def main():
     # get players
-    # player1, player2 = initialisePlayer()
+    player1, player2 = initialisePlayer()
     # build board
     boardConfig = {
-        # "size": initialiseBoard()
-        "size": 5
+        "size": initialiseBoard()
+        # "size": 5
     }
     board = Board(**boardConfig)
     gameController = GameController(board)
